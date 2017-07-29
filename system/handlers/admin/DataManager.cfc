@@ -204,10 +204,7 @@
 			for( var filterByField in filterByFields ) {
 				filterValue = rc[filterByField] ?: "";
 				if( !isEmpty( filterValue ) ){
-					extraFilters.append({
-						  filter       = "#filterByField# in ( :#filterByField# )"
-						, filterParams = { "#filterByField#" = listToArray( filterValue ) }
-					});
+					extraFilters.append({ filter = { "#filterByField#" = listToArray( filterValue ) } });
 				}
 			}
 
@@ -1643,6 +1640,7 @@
 		<cfargument name="draftsEnabled"           type="boolean" required="false" default="false" />
 		<cfargument name="canPublish"              type="boolean" required="false" default="false" />
 		<cfargument name="canSaveDraft"            type="boolean" required="false" default="false" />
+		<cfargument name="validationResult"        type="any"     required="false" />
 		<cfargument name="stripPermissionedFields" type="boolean" required="false" default="true" />
 		<cfargument name="permissionContext"       type="string"  required="false" default="#arguments.object#" />
 		<cfargument name="permissionContextKeys"   type="array"   required="false" default="#ArrayNew(1)#" />
@@ -1657,7 +1655,7 @@
 			var persist          = "";
 			var isDraft          = false;
 
-			validationResult = validateForm( formName=arguments.formName, formData=formData, stripPermissionedFields=arguments.stripPermissionedFields, permissionContext=arguments.permissionContext, permissionContextKeys=arguments.permissionContextKeys );
+			validationResult = validateForm( formName=arguments.formName, formData=formData, validationResult=( arguments.validationResult ?: NullValue() ), stripPermissionedFields=arguments.stripPermissionedFields, permissionContext=arguments.permissionContext, permissionContextKeys=arguments.permissionContextKeys );
 
 			if ( not validationResult.validated() ) {
 				messageBox.error( translateResource( "cms:datamanager.data.validation.error" ) );
