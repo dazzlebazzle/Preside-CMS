@@ -3,7 +3,6 @@
 	.launcher-menu-icon {
 		color        : white;
 		margin-left  : 5px;
-		margin-right : 5px;
 	}
 
 	.launcher-menu-input {
@@ -17,9 +16,11 @@
 		-webkit-transition : all 0.1s linear;
 		-moz-transition    : all 0.1s linear;
 		transition         : all 0.1s linear;
+		opacity            : 0.95;
 
 		&:focus {
-			width : 450px;
+			width   : 450px;
+			opacity : 1;
 		}
 	}
 
@@ -27,7 +28,7 @@
 		display                    : none;
 		position                   : relative;
 		top                        : -5px;
-		left                       : 31px;
+		left                       : 26px;
 		z-index                    : 100;
 		height   : auto;
 		overflow                   : hidden;

@@ -6,7 +6,7 @@
 	<div class="navbar-header pull-left">
 		<ul class="nav ace-nav">
 			<li class="launcher-menu clearfix">
-				<label for="preside-launcher-input" class="launcher-menu-icon"><i class="fa fa-fw fa-search"></i></label>
+				<label for="preside-launcher-input" class="launcher-menu-icon"><i class="fa fa-fw fa-bolt"></i></label>
 				<input name="preside-launcher-input" id="preside-launcher-input" class="launcher-menu-input compact" placeholder="#launcherPlaceholder#" />
 
 				<div class="launcher-results-box">
