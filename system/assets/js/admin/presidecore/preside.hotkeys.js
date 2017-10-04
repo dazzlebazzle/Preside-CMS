@@ -4,7 +4,7 @@
 
 ( function( $ ){
 
-	var $searchBox          = $( '#nav-search-input' )
+	var $searchBox          = $( '#preside-launcher-input' )
 	  , $sidebar            = $( '#sidebar' )
 	  , $mainContainer      = $( '#main-container' )
 	  , gotoMode            = false
@@ -37,7 +37,7 @@
 
 	registerHotkeys = function(){
 		$('body').keydown( 'g'      , function( e ){ if( !userIsTyping() && !isModifierPressed( e ) ) { toggleGotoMode( e );   } } )
-		         .keyup  ( '/'      , function( e ){ if( !userIsTyping() && !isModifierPressed( e ) ) { focusInSearchBox( e ); } } )
+		         .keydown( '/'      , function( e ){ if( !userIsTyping() && !isModifierPressed( e ) ) { focusInSearchBox( e ); } } )
 		         .keydown( 'esc'    , escapeFeatures )
 		         .keydown( 'comma'  , function( e ){ if( !userIsTyping() && !isModifierPressed( e ) ) { toggleSidebar( e );    } } )
 		         .keydown( 'period' , function( e ){ if( !userIsTyping() && !isModifierPressed( e ) ) { toggleFixedWidth( e ); } } )
@@ -277,8 +277,9 @@
 		}
 	};
 
-	focusInSearchBox = function(){
-		$searchBox.focus();
+	focusInSearchBox = function( e ){
+		e.preventDefault();
+		$searchBox.focus().select();
 	};
 
 	escapeFeatures = function(){

@@ -1,0 +1,61 @@
+.launcher-menu {
+
+	.launcher-menu-icon {
+		color        : white;
+		margin-left  : 5px;
+		margin-right : 5px;
+	}
+
+	.launcher-menu-input {
+		border             : none;
+		border-radius      : 5px;
+		line-height        : 2;
+		padding            : 0 10px;
+		margin-right       : 10px;
+		width              : 100px;
+		color              : @input-color;
+		-webkit-transition : all 0.1s linear;
+		-moz-transition    : all 0.1s linear;
+		transition         : all 0.1s linear;
+
+		&:focus {
+			width : 450px;
+		}
+	}
+
+	.launcher-results-box {
+		display                    : none;
+		position                   : relative;
+		top                        : -5px;
+		left                       : 31px;
+		z-index                    : 100;
+		height   : auto;
+		overflow                   : hidden;
+		background                 : white;
+		width                      : 100px;
+		-webkit-box-shadow         : 0px 3px 12px 1px rgba(0,0,0,0.75);
+		-moz-box-shadow            : 0px 3px 12px 1px rgba(0,0,0,0.75);
+		box-shadow                 : 0px 3px 12px 1px rgba(0,0,0,0.75);
+		border-bottom-left-radius  : 5px;
+		border-bottom-right-radius : 5px;
+
+		.launcher-results-results {
+			height     : 200px;
+			overflow-y : scroll;
+			padding    : 10px;
+		}
+
+		.launcher-results-footer {
+			background : @default-panel-background-colour;
+			padding    : 10px;
+		}
+	}
+
+	&.active {
+		.launcher-results-box {
+			display  : block;
+			width    : 450px;
+		}
+	}
+
+}

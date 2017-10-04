@@ -2,6 +2,7 @@
 	systemMenu        = renderView( "/admin/layout/systemMenu" );
 	userMenu          = renderView( "/admin/layout/userMenu" );
 	applicationNav    = renderViewlet( event="admin.layout.applicationNav" );
+	launcherNav       = renderViewlet( event="admin.layout.launcher" );
 	sitePicker        = renderViewlet( "admin.sites.sitePicker" );
 	notificationsMenu = renderViewlet( "admin.notifications.notificationNavPromo" );
 	helpAndSupport    = renderView( "/admin/layout/helpAndSupportMenu" );
@@ -16,6 +17,7 @@
 		<div class="navbar-container" id="navbar-container">
 			#applicationNav#
 			#sitePicker#
+			#launcherNav#
 
 			<div class="navbar-header pull-right" role="navigation">
 				<ul class="nav ace-nav">
